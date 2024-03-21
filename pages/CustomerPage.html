@@ -9,6 +9,9 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="../styles/basicStyles.css">
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/customerStyle.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../scripts/script.js"></script>
+
 </head>
 
 <body>
@@ -16,24 +19,26 @@
         <img src="../images/logo.png" alt="BankEazy Logo">
     </div>
     <nav class="navBar">
-        <div class="back-button-div">
-            <a class="back-button-a" href="Javascript:history.back()"><img class="back-button" src="../images/back.png"
-                    alt="Back button"></a>
-        </div>
-        <div class="nav-items-div">
-            <ul>
-                <li class="nav-item">
-                    <a href="Accounts.html">
-                        My Accounts
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html">Logout</a>
-                </li>
-            </ul>
+
+        <a class="nav-item" href="Accounts.html">My Accounts</a>
+
+        <a class="nav-item" href="contact.html">Contact</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropDownContent()"><i class="fa-solid fa-user"></i>
+                <i id="down-btn" class="fa fa-caret-down"></i><i  id="up-btn" class="fa-solid fa-caret-up"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="CustomerPage.html">
+                    <p>View Profile</p>
+                </a>
+                <a href="changePassword.html">
+                    <p>Change Passsword</p>
+                </a>
+                <a href="index.html">
+                    <p>Logout</p>
+                </a>
+
+            </div>
         </div>
     </nav>
     <div id="page_body">
@@ -52,34 +57,34 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>User ID</strong></td>
-                                <td>1</td>
+                                <td>User ID</td>
+                                <td><strong>1</strong></td>
                             </tr>
                             <tr>
-                                <td><strong>Name</strong></td>
+                                <td>Name</td>
                                 <td>
-                                    surya
+                                    <strong>surya</strong>
                                 </td>
                             </tr>
                             <tr>
-                                <td><strong>Phone</strong></td>
-                                <td>9876543210</td>
+                                <td>Phone</td>
+                                <td><strong>9876543210</strong></td>
                             </tr>
                             <tr>
-                                <td><strong>Gender</strong></td>
-                                <td>Male</td>
+                                <td>Gender</td>
+                                <td><strong>Male</strong></td>
                             </tr>
                             <tr>
-                                <td><strong>DOB</strong></td>
-                                <td>08/01/2003</td>
+                                <td>DOB</td>
+                                <td><strong>08/01/2003</strong></td>
                             </tr>
                             <tr>
-                                <td><strong>PAN</strong></td>
-                                <td>OB9283IDID</td>
+                                <td>PAN</td>
+                                <td><strong>OB9283IDID</strong></td>
                             </tr>
                             <tr>
-                                <td><strong>Aadhar</strong></td>
-                                <td>1234 5678 9012</td>
+                                <td>Aadhar</td>
+                                <td><strong>1234 5678 9012</strong></td>
                             </tr>
                         </tbody>
                     </table>

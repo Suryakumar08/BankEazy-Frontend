@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../styles/basicStyles.css">
     <link rel='stylesheet' type='text/css' media='screen' href='../styles/accountsStyle.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="../scripts/script.js"></script>
 </head>
 
 <body>
@@ -20,12 +21,12 @@
     </div>
     <nav class="navBar">
 
-        <a class="selected" href="Accounts.html">My Accounts</a>
+        <a class="nav-item selected" href="Accounts.html">My Accounts</a>
 
-        <a href="contact.html">Contact</a>
+        <a class="nav-item" href="contact.html">Contact</a>
         <div class="dropdown">
             <button class="dropbtn" onclick="toggleDropDownContent()"><i class="fa-solid fa-user"></i>
-                <i class="fa fa-caret-down"></i>
+                <i id="down-btn" class="fa fa-caret-down"></i><i  id="up-btn" class="fa-solid fa-caret-up"></i>
             </button>
             <div class="dropdown-content">
                 <a href="CustomerPage.html">
@@ -44,12 +45,11 @@
     <div id="page_body">
         <div id="contentBar">
             <ul id="contentList">
-                <li class="contentList_item selected"></li>
-                <li class="contentList_item"><a href="withdraw.html">Withdraw</a></li>
-                <li class="contentList_item"><a href="deposit.html">Deposit</a></li>
-                <li class="contentList_item"><a href="BankTransfer.html">Intra Bank Transfer</a></li>
-                <li class="contentList_item"><a href="BankTransfer.html">Inter Bank Transfer</a></li>
-                <li class="contentList_item"><a href="transactionHistory.html">Transaction History</a></li>
+                <li id="withdraw" class="contentList_item"><a href="accountOperations.html">Withdraw</a></li>
+                <li id="deposit" class="contentList_item"><a href="accountOperations.html">Deposit</a></li>
+                <li id="intra-bank-transfer" class="contentList_item"><a href="accountOperations.html">Intra Bank Transfer</a></li>
+                <li id="inter-bank-transfer" class="contentList_item"><a href="accountOperations.html">Inter Bank Transfer</a></li>
+                <li id="transactionHistory" class="contentList_item"><a href="transactionHistory.html">Transaction History</a></li>
             </ul>
         </div>
 
@@ -154,19 +154,7 @@
 
 
     </div>
-    <script>
-        function toggleDropDownContent() {
-            var elementsToToggle = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < elementsToToggle.length; i++) {
-                var element = elementsToToggle[i];
-                if (element.style.display === "none" || element.style.display === "") {
-                    element.style.display = "block";
-                } else {
-                    element.style.display = "none";
-                }
-            }
-        }
-    </script>
+    
 </body>
 
 

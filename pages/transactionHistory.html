@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -7,31 +8,118 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles/basicStyles.css">
-    <link rel='stylesheet' type='text/css' media='screen' href='../styles/withdraw.css'>
-    <script src='main.js'></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='../styles/transactionHistory.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src='../scripts/script.js'></script>
 </head>
+
 <body>
     <div class="logo">
         <img src="../images/logo.png" alt="BankEazy Logo">
     </div>
     <nav class="navBar">
-        <!-- <a class="back-button" href="Javascript:history.back()"><img src="../images/back.png" alt="Back button"></a> -->
+
+        <a class="nav-item" href="Accounts.html">My Accounts</a>
+
         <a class="nav-item" href="contact.html">Contact</a>
-        <a class="nav-item" href="index.html">Logout</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropDownContent()"><i class="fa-solid fa-user"></i>
+                <i id="down-btn" class="fa fa-caret-down"></i><i id="up-btn" class="fa-solid fa-caret-up"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="CustomerPage.html">
+                    <p>View Profile</p>
+                </a>
+                <a href="changePassword.html">
+                    <p>Change Passsword</p>
+                </a>
+                <a href="index.html">
+                    <p>Logout</p>
+                </a>
+
+            </div>
+        </div>
     </nav>
     <div id="page_body">
         <div id="contentBar">
             <ul id="contentList">
-                <li class="contentList_item"><a href="Accounts.html">Accounts</a></li>
-                <li class="contentList_item"><a href="Customer_Profile.html">Profile</a></li>
-                <li class="contentList_item"><a href="changePassword.html">Change Password</a></li>
-                <li class="contentList_item"><a href="withdraw.html">Withdraw</a></li>
-                <li class="contentList_item"><a href="deposit.html">Deposit</a></li>
-                <li class="contentList_item"><a href="BankTransfer.html">Intra Bank Transfer</a></li>
-                <li class="contentList_item"><a href="BankTransfer.html">Inter Bank Transfer</a></li>
-                <li class="contentList_item selected"><a href="transactionHistory.html">Transaction History</a></li>
+                <li class="contentList_item"><a href="accountOperations.html">Withdraw</a></li>
+                <li class="contentList_item"><a href="accountOperations.html">Deposit</a></li>
+                <li class="contentList_item"><a href="accountOperations.html">Intra Bank Transfer</a></li>
+                <li class="contentList_item"><a href="accountOperations.html">Inter Bank Transfer</a></li>
+                <li class="contentList_item"><a class="list-item-selected" href="transactionHistory.html">Transaction History</a></li>
             </ul>
+        </div>
+
+        <div id="page-container">
+            <div id="history-header">
+                <div class="accounts">
+                    <label for="accounts_select">Select Account</label>
+                    <select name="accounts_select" id="accounts-select" required>
+                        <option value="null" selected hidden>select account</option>
+                        <option value="10000000000001">100000000000001</option>
+                        <option value="10000000000002">100000000000002</option>
+                    </select>
+                </div>
+                <div class="date-from">
+                    <label for="from_date">From</label>
+                    <input type="date" name="from_date" id="from-date" required>
+                </div>
+                <div class="date-to">
+                    <label for="to_date">To</label>
+                    <input type="date" name="to_date" id="to-date" required>
+                </div>
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass search"></i>
+                </div>
+
+
+            </div>
+            <div id="history-body">
+                <table class="transaction-table">
+                    <thead>
+                        <th>Transaction ID</th>
+                        <th>Account No</th>
+                        <th>Customer ID</th>
+                        <th>Recipient Account</th>
+                        <th>Description</th>
+                        <th>Transaction type</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Reference No</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1000000000000000001</td>
+                            <td>2</td>
+                            <td>1000000000000000002</td>
+                            <td>Summa</td>
+                            <td>Debit</td>
+                            <td>&#x20B9;1000.0</td>
+                            <td class="status-success">Success</td>
+                            <td>101</td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>1000000000000000001</td>
+                            <td>2</td>
+                            <td>1000000000000000002</td>
+                            <td>Summa</td>
+                            <td>Debit</td>
+                            <td>&#x20B9;1000.0</td>
+                            <td class="status-failure">Failed</td>
+                            <td>102</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagenation">
+
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
